@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript"   > 
+    //1.Get all the countries from Asia continent /region using Filter function:
+
+        let filteredRegion = data.filter((user) => {
+            return user.region && user.continents[0] === 'Asia';
+            });
+
+           console.log(filteredRegion); 
+    //2.Get all the countries with a population of less than 2 lakhs using Filter function:
+
+        let filterPopulation = data.filter((user) => {
+           return user.population  < 200000;
+        });
+
+           console.log(filterPopulation);
+
+    //3.Print the following details name, capital, flag using forEach function.
+    data.forEach((element)=>{
+        console.log(element.name,element.capital,element.flag);
+    })
+
+
+    //4.Print the total population of countries using reduce function 
+    const population=data.reduce((acc,element)=>{
+        return acc+element.population;
+    },0)
+    console.log(population);
+
+
+    //5.Print the country which use US Dollars as currency.
+
+     var cur=[];
+        for(i=0;i<data.length;i++)
+     {
+        for(sample in data[i].currencies)
+        {
+            if(sample =="USD")
+            {
+                console.log(data[i]);
+            }
+            
+        }
+    }
+
+    </script>
+</body>
+</html>
